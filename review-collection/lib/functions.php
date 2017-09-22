@@ -173,7 +173,7 @@
 	function add_photo($session_review_id=NULL) {
 		if($_POST) {
 			$data = $_FILES["review_image"]["tmp_name"];
-			$image = \Cloudinary\Uploader::upload($data);
+			$image = \Cloudinary\Uploader::upload($data, array("tags" => "Image Only Test"));
 
 			if($image) {
 				global $mysqli;
