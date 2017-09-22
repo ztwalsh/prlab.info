@@ -34,6 +34,7 @@
 							form_hidden('page_id', $page_id);
 							form_hidden('test_group', $test_group);
 							form_hidden('ip', $_SERVER['REMOTE_ADDR']);
+							form_hidden('bbid');
 						?>
 						<section class="cf">
 							<div class="span2">

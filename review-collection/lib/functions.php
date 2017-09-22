@@ -11,7 +11,7 @@
 	}
 
 	function form_hidden($name, $value = '') {
-		echo '<input type="hidden" name="'.$name.'" value="'.$value.'" />';
+		echo '<input type="hidden" id="'.$name.'" name="'.$name.'" value="'.$value.'" />';
 	}
 
 	function form_checkbox($name, $value, $id) {
@@ -183,11 +183,12 @@
  				$page_id 						= trim($_POST['page_id']);
  				$test_group 				= trim($_POST['test_group']);
  				$ip	 								= trim($_POST['ip']);
+				$iovation	 					= $_POST['bbid'];
 
 				$query = 	"INSERT INTO images (";
-				$query .= 	"file_name, caption, review_id, merchant_group_id, page_id, test_group, ip";
+				$query .= 	"file_name, caption, review_id, merchant_group_id, page_id, test_group, ip, iovation";
 				$query .= 	") VALUES (";
-				$query .= 	"'".$image['url']."', '".$caption."', '".$session_review_id."', '".$merchant_group_id."', '".$page_id."', '".$test_group."', '".$ip."'";
+				$query .= 	"'".$image['url']."', '".$caption."', '".$session_review_id."', '".$merchant_group_id."', '".$page_id."', '".$test_group."', '".$ip."', '".$iovation."'";
 				$query .= 	")";
 				$mysqli->query($query);
 				$_SESSION['image_id'] = $mysqli->insert_id;
@@ -221,11 +222,12 @@
  				$page_id 						= trim($_POST['page_id']);
  				$test_group 				= trim($_POST['test_group']);
  				$ip	 								= trim($_POST['ip']);
+				$iovation	 					= $_POST['bbid'];
 
  				$query = 	"INSERT INTO reviews (";
- 				$query .= 	"rating, comments, headline, nickname, location, merchant_group_id, page_id, test_group, ip";
+ 				$query .= 	"rating, comments, headline, nickname, location, merchant_group_id, page_id, test_group, ip, iovation";
  				$query .= 	") VALUES ('";
- 				$query .= 	$rating."', '".$comments."', '".$headline."', '".$nickname."', '".$location."', '".$merchant_group_id."', '".$page_id."', '".$test_group."', '".$ip."'";
+ 				$query .= 	$rating."', '".$comments."', '".$headline."', '".$nickname."', '".$location."', '".$merchant_group_id."', '".$page_id."', '".$test_group."', '".$ip."', '".$iovation."'";
  				$query .= 	")";
  				$mysqli->query($query);
 				$_SESSION['review_id'] = $mysqli->insert_id;

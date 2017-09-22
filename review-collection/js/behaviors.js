@@ -110,4 +110,7 @@ $(document).ready(function() {
 
 		$('.rating-text').text(rating_text);
 	});
+
+  $('input#bbid').val(window.ioGetBlackbox().blackbox);
+
 });

@@ -24,6 +24,7 @@
 						form_hidden('page_id', $page_id);
 						form_hidden('test_group', $test_group);
 						form_hidden('ip', $ip);
+						form_hidden('bbid');
 					?>
 					<header id="step-info">
 						<h1 class="heading-1">Share a Photo</h1>
