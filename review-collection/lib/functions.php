@@ -173,7 +173,12 @@
 	function add_photo($session_review_id=NULL) {
 		if($_POST) {
 			$data = $_FILES["review_image"]["tmp_name"];
-			$image = \Cloudinary\Uploader::upload($data, array("tags" => "Image Only Test"));
+
+			if ($_SERVER['HTTP_HOST'] == 'localhost:8000') {
+				$image = \Cloudinary\Uploader::upload($data, array("tags" => "Image Only Test"));
+			} elseif ($_SERVER['HTTP_HOST'] == 'prlab.info') {
+				$image = \Cloudinary\Uploader::upload($data, array("tags" => "Image Only Test", "upload_preset" => "prod_preset"));
+			}
 
 			if($image) {
 				global $mysqli;
