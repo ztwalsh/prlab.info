@@ -178,17 +178,19 @@
 			if($image) {
 				global $mysqli;
 
-				$caption				= trim($_POST['caption']);
-				$merchant_group_id 	= trim($_POST['merchant_group_id']);
- 				$page_id 						= trim($_POST['page_id']);
- 				$test_group 				= trim($_POST['test_group']);
- 				$ip	 								= trim($_POST['ip']);
-				$iovation	 					= $_POST['bbid'];
+				$caption							= trim($_POST['caption']);
+				$merchant_group_id 		= trim($_POST['merchant_group_id']);
+ 				$page_id 							= trim($_POST['page_id']);
+ 				$test_group 					= trim($_POST['test_group']);
+ 				$ip	 									= trim($_POST['ip']);
+				$iovation	 						= $_POST['bbid'];
+				$merchant_user_email	= trim($_POST['merchant_user_email']);
+				$order_id							= trim($_POST['order_id']);
 
 				$query = 	"INSERT INTO images (";
-				$query .= 	"file_name, caption, review_id, merchant_group_id, page_id, test_group, ip, iovation";
+				$query .= 	"file_name, caption, review_id, merchant_group_id, page_id, test_group, ip, iovation, merchant_user_email, order_id";
 				$query .= 	") VALUES (";
-				$query .= 	"'".$image['url']."', '".$caption."', '".$session_review_id."', '".$merchant_group_id."', '".$page_id."', '".$test_group."', '".$ip."', '".$iovation."'";
+				$query .= 	"'".$image['url']."', '".$caption."', '".$session_review_id."', '".$merchant_group_id."', '".$page_id."', '".$test_group."', '".$ip."', '".$iovation."', '".$merchant_user_email."', '".$order_id."'";
 				$query .= 	")";
 				$mysqli->query($query);
 				$_SESSION['image_id'] = $mysqli->insert_id;
@@ -223,11 +225,13 @@
  				$test_group 				= trim($_POST['test_group']);
  				$ip	 								= trim($_POST['ip']);
 				$iovation	 					= $_POST['bbid'];
+				$merchant_user_email	= trim($_POST['merchant_user_email']);
+				$order_id							= trim($_POST['order_id']);
 
  				$query = 	"INSERT INTO reviews (";
- 				$query .= 	"rating, comments, headline, nickname, location, merchant_group_id, page_id, test_group, ip, iovation";
+ 				$query .= 	"rating, comments, headline, nickname, location, merchant_group_id, page_id, test_group, ip, iovation, merchant_user_email, order_id";
  				$query .= 	") VALUES ('";
- 				$query .= 	$rating."', '".$comments."', '".$headline."', '".$nickname."', '".$location."', '".$merchant_group_id."', '".$page_id."', '".$test_group."', '".$ip."', '".$iovation."'";
+ 				$query .= 	$rating."', '".$comments."', '".$headline."', '".$nickname."', '".$location."', '".$merchant_group_id."', '".$page_id."', '".$test_group."', '".$ip."', '".$iovation."', '".$merchant_user_email."', '".$order_id."'";
  				$query .= 	")";
  				$mysqli->query($query);
 				$_SESSION['review_id'] = $mysqli->insert_id;

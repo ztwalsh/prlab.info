@@ -1,5 +1,5 @@
 <?php
-  $url_params = '?product_name=Ray-Ban%20New%20Wayfarer%20Classic%20Tortoise&product_image_url=https://assets.ray-ban.com//is/image/RayBan/8053672069303_shad_fr?$zoom$&merchant_group_id=444444&page_id=555555';
+  $url_params = '?product_name=Ray-Ban%20New%20Wayfarer%20Classic%20Tortoise&product_image_url=https://assets.ray-ban.com//is/image/RayBan/8053672069303_shad_fr?$zoom$&merchant_group_id=444444&page_id=555555&merchant_user_email=example@example.com&order_id=666666';
 ?>
 
 <!DOCTYPE html>

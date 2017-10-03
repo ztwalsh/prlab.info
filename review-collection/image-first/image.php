@@ -25,6 +25,8 @@
 						form_hidden('test_group', $test_group);
 						form_hidden('ip', $ip);
 						form_hidden('bbid');
+						form_hidden('merchant_user_email', $merchant_user_email);
+						form_hidden('order_id', $order_id);
 					?>
 					<header id="step-info">
 						<h1 class="heading-1">Share a Photo</h1>

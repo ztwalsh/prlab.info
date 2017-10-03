@@ -35,6 +35,8 @@
 							form_hidden('test_group', $test_group);
 							form_hidden('ip', $_SERVER['REMOTE_ADDR']);
 							form_hidden('bbid');
+							form_hidden('merchant_user_email', $merchant_user_email);
+							form_hidden('order_id', $order_id);
 						?>
 						<section class="cf">
 							<div class="span2">
