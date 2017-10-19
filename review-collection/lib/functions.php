@@ -289,7 +289,7 @@
 
 	function show_sweepstakes($sweepstakes) {
 		if ($sweepstakes) {
-			echo '<br />You also agree to the terms of our <a class="legal_link" href="https://shakoolie.com/pages/sweepstakes" target="_blank">Shakoolie Image Sweepstakes</a>.';
+			echo '<br />You also agree to the terms of our <a class="legal_link" href="https://www.powerreviews.com/powerreviews-sweepstakes/" target="_blank">Sweepstakes</a>.';
 		} else {
 
 		}
