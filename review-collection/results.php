@@ -8,7 +8,8 @@
   }
 
   $query = 'SELECT * FROM images WHERE merchant_group_id = '.$merchant_group_id.'';
-  $images = $mysqli->query($query);
+  $remove = ' AND merchant_user_email NOT IN ("ztwalsh@gmail.com","zach.walsh@powerreviews.com","sara.rossio@powerreviews.com","rachel.bentley@powerreviews.com")';
+  $images = $mysqli->query($query.$remove);
 ?>
 
 <!DOCTYPE html>
