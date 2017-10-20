@@ -1,10 +1,10 @@
 <?php
   require('lib/config.php');
 
-  if (isset($_POST['merchant_group_id'])) {
-    $merchant_group_id = $_POST['merchant_group_id'];
+  if (isset($_GET['merchant_group_id'])) {
+    $merchant_group_id = $_GET['merchant_group_id'];
   } else {
-    $merchant_group_id = 444444;
+    $merchant_group_id = NULL;
   }
 
   $query = 'SELECT * FROM images WHERE merchant_group_id = '.$merchant_group_id.'';
@@ -19,7 +19,7 @@
 	</head>
 
 	<body>
-    <section>
+    <!-- <section>
       <form action="results.php" method="post">
         <p>
           <input type="text" name="merchant_group_id" value="" />
@@ -27,7 +27,7 @@
         </p>
         <p><?php echo $query; ?></p>
       </form>
-    </section>
+    </section> -->
     <section>
   		<?php
         echo '<p>Results: '.mysqli_num_rows($images).'</p>';
