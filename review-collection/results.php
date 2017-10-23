@@ -9,9 +9,9 @@
 
   $query = 'SELECT * FROM images WHERE merchant_group_id = '.$merchant_group_id.'';
   $remove = ' AND merchant_user_email NOT IN ("ztwalsh@gmail.com","zach.walsh@powerreviews.com","sara.rossio@powerreviews.com","rachel.bentley@powerreviews.com")';
-  $cations = ' AND caption IS NULL';
+  $cap = ' AND (caption is null or caption = "")';
   $images = $mysqli->query($query.$remove);
-  $captions = $mysqli->query($query.$remove.$captions);
+  $captions = $mysqli->query($query.$remove.$cap);
 
   $image_count = mysqli_num_rows($images);
   $caption_count = mysqli_num_rows($captions);
@@ -32,7 +32,7 @@
           <input type="text" name="merchant_group_id" value="" />
           <input type="submit" name="submit" value="Get Images" />
         </p>
-        <p><?php echo $query; ?></p>
+        <p><?php echo $query.$remove.$cap; ?></p>
       </form>
     </section> -->
     <section>
