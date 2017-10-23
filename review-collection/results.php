@@ -19,7 +19,7 @@
   $caption_count = mysqli_num_rows($captions);
   $review_count = mysqli_num_rows($reviews);
   $caption_percentage = $caption_count/$image_count*100;
-  $caption_percentage = $review_count/$image_count*100;
+  $review_percentage = $review_count/$image_count*100;
 ?>
 
 <!DOCTYPE html>
@@ -30,15 +30,6 @@
 	</head>
 
 	<body>
-    <!-- <section>
-      <form action="results.php" method="post">
-        <p>
-          <input type="text" name="merchant_group_id" value="" />
-          <input type="submit" name="submit" value="Get Images" />
-        </p>
-        <p><?php echo $query.$remove.$cap; ?></p>
-      </form>
-    </section> -->
     <section>
   		<?php
         echo '<p>Images: '.$image_count.'<br />';
