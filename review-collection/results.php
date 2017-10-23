@@ -32,12 +32,12 @@
 	<body>
     <section>
   		<?php
-        echo '<h2>Summary</h2>';
+        echo '<h2 class="heading-2">Summary</h2>';
         echo '<p>Images: '.$image_count.'<br />';
-        echo '<p>Captions: '.$caption_count.' ('.$caption_percentage.'%)<br />';
-        echo '<p>Reviews: '.$review_count.' ('.$review_percentage.'%)</p>';
+        echo 'Captions: '.$caption_count.' ('.$caption_percentage.'%)<br />';
+        echo 'Reviews: '.$review_count.' ('.$review_percentage.'%)</p>';
         echo '<p>&nbsp;</p>';
-        echo '<h2>Summary</h2>';
+        echo '<h2 class="heading-2">Images</h2>';
         while($image = $images->fetch_assoc()) {
           echo '<p>';
             echo '<img src="'.$image['file_name'].'" width="400" height="auto" /><br />';
