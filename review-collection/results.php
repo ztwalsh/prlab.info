@@ -9,7 +9,7 @@
 
   $query = 'SELECT * FROM images WHERE merchant_group_id = '.$merchant_group_id.'';
   $remove = ' AND merchant_user_email NOT IN ("ztwalsh@gmail.com","zach.walsh@powerreviews.com","sara.rossio@powerreviews.com","rachel.bentley@powerreviews.com")';
-  $cations = ' AND caption = ""';
+  $cations = ' AND caption IS NULL';
   $images = $mysqli->query($query.$remove);
   $captions = $mysqli->query($query.$remove.$captions);
 
