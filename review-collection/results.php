@@ -11,7 +11,7 @@
   $remove = ' AND merchant_user_email NOT IN ("ztwalsh@gmail.com","zach.walsh@powerreviews.com","sara.rossio@powerreviews.com","rachel.bentley@powerreviews.com")';
   $cations = ' AND caption = ""';
   $images = $mysqli->query($query.$remove);
-  $captions = $mysqli->query($query.$captions);
+  $captions = $mysqli->query($query.$remove.$captions);
 
   $image_count = mysqli_num_rows($images);
   $caption_count = mysqli_num_rows($captions);
