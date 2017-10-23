@@ -19,7 +19,7 @@
   $caption_count = mysqli_num_rows($captions);
   $review_count = mysqli_num_rows($reviews);
   $caption_percentage = number_format(($caption_count/$image_count*100),2);
-  $review_percentage = $review_count/$image_count*100;
+  $review_percentage = number_format(($review_count/$image_count*100),2);
 ?>
 
 <!DOCTYPE html>
@@ -32,9 +32,12 @@
 	<body>
     <section>
   		<?php
+        echo '<h2>Summary</h2>';
         echo '<p>Images: '.$image_count.'<br />';
         echo '<p>Captions: '.$caption_count.' ('.$caption_percentage.'%)<br />';
         echo '<p>Reviews: '.$review_count.' ('.$review_percentage.'%)</p>';
+        echo '<p>&nbsp;</p>';
+        echo '<h2>Summary</h2>';
         while($image = $images->fetch_assoc()) {
           echo '<p>';
             echo '<img src="'.$image['file_name'].'" width="400" height="auto" /><br />';
