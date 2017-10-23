@@ -9,7 +9,13 @@
 
   $query = 'SELECT * FROM images WHERE merchant_group_id = '.$merchant_group_id.'';
   $remove = ' AND merchant_user_email NOT IN ("ztwalsh@gmail.com","zach.walsh@powerreviews.com","sara.rossio@powerreviews.com","rachel.bentley@powerreviews.com")';
+  $cations = ' AND caption = ""';
   $images = $mysqli->query($query.$remove);
+  $captions = $mysqli->query($query.$captions);
+
+  $image_count = mysqli_num_rows($images);
+  $caption_count = mysqli_num_rows($captions);
+  $caption_percentage = $caption_count/$image_count;
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +37,8 @@
     </section> -->
     <section>
   		<?php
-        echo '<p>Results: '.mysqli_num_rows($images).'</p>';
+        echo '<p>Images: '.$image_count.'</p>';
+        echo '<p>Captions: '.$caption_count.' ('.$caption_percentage.'%)</p>';
         while($image = $images->fetch_assoc()) {
           echo '<p>';
             echo '<img src="'.$image['file_name'].'" width="400" height="auto" /><br />';
