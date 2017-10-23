@@ -15,7 +15,7 @@
 
   $image_count = mysqli_num_rows($images);
   $caption_count = mysqli_num_rows($captions);
-  $caption_percentage = $caption_count/$image_count;
+  $caption_percentage = $caption_count/$image_count*100;
 ?>
 
 <!DOCTYPE html>
