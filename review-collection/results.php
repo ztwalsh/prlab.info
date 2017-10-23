@@ -16,7 +16,7 @@
   $captions = $mysqli->query($image_query.$remove.$caption_query);
 
   $image_count = mysqli_num_rows($images);
-  $caption_count = mysqli_num_rows($captions);
+  $caption_count = mysqli_num_rows($images) - mysqli_num_rows($captions);
   $review_count = mysqli_num_rows($reviews);
   $caption_percentage = number_format(($caption_count/$image_count*100),2);
   $review_percentage = number_format(($review_count/$image_count*100),2);
