@@ -42,6 +42,7 @@
           echo '<p>';
             echo '<img src="'.$image['file_name'].'" width="400" height="auto" /><br />';
             echo 'Caption: '.$image['caption'].'<br />';
+            echo 'Test Group: '.$image['test_group'].'<br />';
           echo '</p>';
         }
       ?>
